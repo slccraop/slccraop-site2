@@ -1,0 +1,24 @@
+# SLCCRAOP project rules
+Read docs/BUILD_MANUAL.md before every session. It overrides defaults.
+
+## Never
+- Use real victim, suspect or case data. Fake data only, marked FAKE.
+- Put names, images, links, phone numbers or submitter text on any public page or API.
+- Store, view, download or archive sexual content involving a minor.
+- Put secrets, the service-role key or API keys in the frontend, repo, logs or .env.example.
+- Disable RLS, write a policy of "using (true)" on a private table, or take roles from user-editable metadata.
+- Invent contact details, hotlines, statutes, statistics or legal text. Use [VERIFY] / [LEGAL REVIEW] placeholders.
+- Add a dependency without checking it exists, is maintained and is necessary, and logging it in docs/DECISIONS.md.
+- Run destructive commands (drop, truncate, force-push, delete data) without owner approval.
+- Leave mocks, swallowed errors, TODOs or placeholder text in finished work.
+- Add features or change rules outside the current task.
+
+## Always
+- Work one task at a time from loop.md. Stop at every GATE and wait for the owner.
+- Validate all input on the server with Zod. Enforce all permissions in RLS and functions.
+- After each task run lint, typecheck and tests; commit with a conventional message.
+- Add error, loading and empty states; make UI accessible and translated in EN, SI, TA.
+- Store dates in UTC; display in Asia/Colombo.
+- Write commands that work on Windows PowerShell and Unix.
+- End every task with an honest report: done, run and passed, failed, unverified, decisions made.
+- Ask the owner when anything is ambiguous.

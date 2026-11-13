@@ -1,0 +1,6 @@
+dist
+node_modules
+package-lock.json
+src/styles/design.css
+docs/reference
+docs/BUILD_MANUAL.md

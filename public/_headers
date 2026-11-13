@@ -1,0 +1,13 @@
+# Cloudflare Pages reads this file from the build output (dist/). It sets the security headers from manual 5.10.
+# script-src and frame-src include challenges.cloudflare.com for Turnstile (used from Stage 3).
+# connect-src allows the Supabase project; if you use a custom Supabase domain, add it here.
+/*
+  Content-Security-Policy: default-src 'self'; script-src 'self' https://challenges.cloudflare.com; style-src 'self'; img-src 'self'; font-src 'self'; connect-src 'self' https://*.supabase.co; frame-src https://challenges.cloudflare.com; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'
+  Strict-Transport-Security: max-age=31536000; includeSubDomains
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: DENY
+  Referrer-Policy: no-referrer
+  Permissions-Policy: camera=(), microphone=(), geolocation=()
+
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable

@@ -1,0 +1,557 @@
+{
+  "common": {
+    "skip": "Skip to main content",
+    "skipLedger": "Skip to the case ledger",
+    "loading": "Loading…",
+    "retry": "Try again",
+    "notTranslated": "This page is not available in your language yet. It is shown in English.",
+    "sampleData": "Sample rows for design only.",
+    "notConnected": "[STAGE 3: this action is not connected to the server yet]",
+    "back": "Back"
+  },
+  "nav": {
+    "label": "Main",
+    "how": "How it works",
+    "method": "Methodology",
+    "help": "Get help now",
+    "language": "Language"
+  },
+  "intake": {
+    "open": { "title": "Reports are open.", "body": "We review them in the order received." },
+    "limited": {
+      "title": "Reports are limited today.",
+      "body": "We have reached today's limit for new reports. We review them in the order received."
+    },
+    "closed": {
+      "title": "Reports are closed for now.",
+      "body": "We are not taking new reports.",
+      "link": "See how to complain directly to the authorities."
+    },
+    "unknown": {
+      "title": "Report status unavailable.",
+      "body": "We could not check whether reports are open. Please try again later."
+    },
+    "danger": "If someone is in immediate danger, contact the police first."
+  },
+  "home": {
+    "title": "See how each reported case moves through the authorities.",
+    "lede": "We help people report online sexual abuse and non-consensual sharing of images, pass verified cases to the right authority, and show every authority's progress here. No names, images or personal details are ever published.",
+    "report": "Report an incident",
+    "evidence": "Add evidence to my report"
+  },
+  "ticker": {
+    "label": "Overall progress",
+    "sent": "Cases sent to authorities",
+    "awaiting": "Awaiting a reply",
+    "investigating": "Under investigation",
+    "resolved": "Closed, resolved",
+    "unresolved": "Closed, unresolved",
+    "median": "Median time to first reply",
+    "days_one": "{{count}} day",
+    "days_other": "{{count}} days",
+    "updated": "Last updated {{when}}.",
+    "sample": "Sample figures, not real data.",
+    "loading": "Loading figures…",
+    "error": "The figures could not be loaded."
+  },
+  "ledger": {
+    "title": "Public case ledger",
+    "caption": "Public case ledger",
+    "search": "Search case ID or summary",
+    "category": "Category",
+    "authority": "Authority",
+    "status": "Status",
+    "all": "All",
+    "from": "Date created, from",
+    "to": "Date created, to",
+    "clear": "Clear filters",
+    "sortBy": "Sort by",
+    "sort": {
+      "newest": "Newest case first",
+      "oldest": "Oldest case first",
+      "latestNew": "Latest reply, newest first",
+      "latestOld": "Latest reply, oldest first",
+      "authority": "Authority, A to Z",
+      "status": "Status, A to Z"
+    },
+    "col": {
+      "case": "Case",
+      "summary": "Category and summary",
+      "authority": "Authority",
+      "status": "Status",
+      "latest": "Latest reply"
+    },
+    "sentOn": "Sent {{date}}",
+    "resubmission": "Resubmission requested",
+    "loading": "Loading cases…",
+    "empty": "No cases match these filters.",
+    "error": "The ledger could not be loaded. Please try again later.",
+    "showing": "Showing {{from}} to {{to}} of {{total}} cases",
+    "prev": "Previous",
+    "next": "Next"
+  },
+  "status": {
+    "submitted": "Submitted, awaiting reply",
+    "acknowledged": "Acknowledged by authority",
+    "under_investigation": "Under investigation",
+    "info_requested": "Additional information requested",
+    "resubmission_requested": "Resubmission requested",
+    "no_response": "No response",
+    "closed_resolved": "Closed, resolved",
+    "closed_unresolved": "Closed, unresolved",
+    "closed_unresolved_with_reason": "Closed, unresolved: {{reason}}"
+  },
+  "exchange": {
+    "acknowledgement_received": "Acknowledgement received",
+    "information_requested": "Information requested from complainant",
+    "referred_to_other_unit": "Referred to another unit",
+    "action_in_progress": "Action in progress",
+    "closed_by_authority": "Closed by authority",
+    "no_reply": "No reply yet"
+  },
+  "category": {
+    "ncii": "Non-consensual sharing of images",
+    "sextortion": "Sextortion",
+    "harassment": "Online sexual harassment",
+    "exploitation": "Online sexual exploitation or trafficking"
+  },
+  "reason": {
+    "insufficient_evidence": "insufficient evidence",
+    "suspect_not_identified": "suspect not identified",
+    "outside_mandate": "outside the authority's mandate",
+    "jurisdiction": "jurisdiction",
+    "complainant_withdrew": "complainant withdrew",
+    "duplicate_merged": "duplicate (merged)",
+    "other_documented": "other (documented)"
+  },
+  "withdrawalReason": {
+    "fear_of_retaliation": "Fear of retaliation",
+    "lack_of_authority_response": "Lack of response from the authority",
+    "personal_reasons": "Personal reasons",
+    "other": "Other"
+  },
+  "footer": {
+    "independence": "SLCCRAOP is an independent civil-society project. It is not part of, endorsed by, or acting for any government body or police force.",
+    "about": "About",
+    "privacy": "Privacy",
+    "terms": "Terms",
+    "consent": "Consent and withdrawal",
+    "correction": "Request a correction or removal",
+    "contact": "Contact"
+  },
+  "notFound": {
+    "title": "Page not found",
+    "body": "This page does not exist. Go back to the public case ledger.",
+    "link": "Public case ledger"
+  },
+  "case": {
+    "notFound": "No public case has this ID.",
+    "id": "Case ID",
+    "created": "Date created",
+    "category": "Category",
+    "summary": "Summary",
+    "authority": "Authority",
+    "submitted": "Date sent to authority",
+    "authorityCaseId": "Authority case ID",
+    "latest": "Latest reply",
+    "status": "Status",
+    "outcome": "Final outcome",
+    "resubmission": "Resubmission requested",
+    "yes": "Yes",
+    "no": "No",
+    "updated": "Last updated"
+  },
+  "report": {
+    "title": "Report an incident",
+    "loading": "Checking whether reports are open…",
+    "closedTitle": "We are not taking new reports right now.",
+    "closedBody": "You can still complain directly to the authorities.",
+    "unknownBody": "We could not check whether reports are open, so the form is not shown. Please try again later, or complain directly to the authorities.",
+    "referralLink": "Go to the referral page",
+    "leaveWarning": "Your answers are kept on this page only and are not saved. If you leave or reload it, you will lose them.",
+    "continue": "Continue",
+    "language": {
+      "heading": "Choose your language",
+      "body": "You can change language at any time with the buttons at the top of the page."
+    },
+    "eligibility": {
+      "heading": "Before we start",
+      "minorQ": "Is the person affected under 18?",
+      "minorYes": "Yes",
+      "minorNo": "No",
+      "roleQ": "Who are you reporting for?",
+      "self": "Myself",
+      "behalf": "Someone else (an adult)",
+      "behalfConsent": "This adult has agreed that I can report on their behalf."
+    },
+    "minor": {
+      "heading": "Reports about people under 18 cannot be made here",
+      "body": "To protect them, we do not accept reports about anyone under 18. The referral page explains how to complain directly to the right bodies."
+    },
+    "danger": {
+      "heading": "If someone is in immediate danger",
+      "body": "Contact the police first. This website is not an emergency service.",
+      "ack": "I understand"
+    },
+    "consent": {
+      "heading": "Your consent",
+      "voluntary": "Your cooperation is voluntary.",
+      "withdraw": "You can withdraw your report at any time.",
+      "who": "Our team and the authority that receives your case can see what you send. Nobody else can.",
+      "never": "We never publish names, images, phone numbers, links or anything you write.",
+      "legal": "[LEGAL REVIEW REQUIRED: full plain-language consent text, in English, Sinhala and Tamil]",
+      "agree": "I have read this and I agree to continue."
+    },
+    "form": {
+      "heading": "Your report",
+      "pending": "[STAGE 3: the questionnaire, screenshot upload, phone number step and bot check are added in Stage 3 of the build]"
+    }
+  },
+  "tracking": {
+    "label": "Tracking code",
+    "hint": "The code you were shown after you reported. It has 16 or more letters and numbers.",
+    "invalid": "The tracking code does not look right. Check it and try again."
+  },
+  "withdraw": {
+    "title": "Withdraw my report",
+    "intro": "Enter your tracking code. Withdrawing takes one step and you do not have to give a reason.",
+    "reason": "Reason (optional)",
+    "reasonNone": "I would rather not say",
+    "confirm": "I understand that withdrawing cannot be undone.",
+    "submit": "Withdraw my report",
+    "sending": "Sending…",
+    "done": "Your request has been received. If the tracking code matches a report, that report is now withdrawn.",
+    "bot": "[STAGE 3: the Turnstile bot check is added here]"
+  },
+  "evidence": {
+    "title": "Add evidence to my report",
+    "intro": "Enter your tracking code to add screenshots to a report you already made. You will not be able to see what you sent before.",
+    "check": "Continue",
+    "pending": "[STAGE 3: screenshot upload (PNG, JPG or WebP, 10 MB each) and the bot check are added in Stage 3 of the build]"
+  },
+  "correction": {
+    "title": "Request a correction or removal",
+    "intro": "If something published about a case is wrong, or you want a row removed, tell us. We will reply within {{correctionResponseTime}}.",
+    "caseId": "Case ID",
+    "caseIdHint": "Looks like SL-2026-1234.",
+    "type": "What do you need?",
+    "correct": "Correct something",
+    "remove": "Remove the row",
+    "other": "Something else",
+    "details": "Details",
+    "detailsHint": "Say what is wrong or why you want it removed. Do not include names, links or phone numbers. 10 to 1000 characters.",
+    "contact": "How we can reach you (optional)",
+    "contactHint": "Only add what you are happy for us to hold. Up to 200 characters.",
+    "submit": "Send request",
+    "sending": "Sending…",
+    "invalid": "Check the case ID and details and try again.",
+    "done": "Your request has been received.",
+    "bot": "[STAGE 3: the Turnstile bot check is added here]"
+  },
+  "formError": {
+    "network": "We could not send this. Please try again later.",
+    "not_configured": "[STAGE 3: this action is not connected to the server yet]",
+    "rate_limited": "Too many attempts. Please wait a while and try again.",
+    "rejected": "We could not send this. Please check what you entered and try again.",
+    "bad_response": "We could not send this. Please try again later.",
+    "unknown": "We could not send this. Please try again later."
+  },
+  "referral": {
+    "title": "Get help now",
+    "intro": "If someone is in immediate danger, contact the police first. If you are under 18, or this is about someone under 18, use the routes below. This website does not take reports about people under 18.",
+    "bodiesHeading": "Who to contact",
+    "bodies": [
+      {
+        "name": "CCID",
+        "what": "[VERIFY: what this unit handles and how to file a complaint, from its official source]",
+        "contact": "[VERIFY: official contact details from the unit's own website]"
+      },
+      {
+        "name": "SLCERT",
+        "what": "[VERIFY: what this body handles and how to file a complaint, from its official source]",
+        "contact": "[VERIFY: official contact details from the body's own website]"
+      },
+      {
+        "name": "National Child Protection Authority (NCPA)",
+        "what": "[VERIFY: what this authority handles and how to file a complaint, from its official source]",
+        "contact": "[VERIFY: official contact details from the authority's own website]"
+      },
+      {
+        "name": "Police women and children's units",
+        "what": "[VERIFY: how to reach these units and what they handle, from official police sources]",
+        "contact": "[VERIFY: official contact details from official police sources]"
+      }
+    ],
+    "preserveHeading": "Keeping evidence safely",
+    "preserve": [
+      "Never save, forward or share sexual images of anyone under 18, even as evidence.",
+      "[LEGAL REVIEW REQUIRED: full guidance on preserving evidence safely]"
+    ],
+    "toolsHeading": "Tools that help remove images",
+    "toolsNote": "These sites are run by other organisations. We do not control them.",
+    "tools": [
+      {
+        "name": "StopNCII.org",
+        "for": "For adults (18 and over).",
+        "url": "https://stopncii.org",
+        "note": "[VERIFY: available to people in Sri Lanka]"
+      },
+      {
+        "name": "Take It Down",
+        "for": "For people under 18, or for images taken when under 18.",
+        "url": "https://takeitdown.ncmec.org",
+        "note": "[VERIFY: available to people in Sri Lanka]"
+      }
+    ],
+    "minorsCount": "Cases involving people under 18 referred to the right bodies so far: {{count}}. We show only this total and never any case details."
+  },
+  "stats": {
+    "heading": "Detailed figures",
+    "loading": "Loading figures…",
+    "error": "The figures could not be loaded.",
+    "byAuthority": "By authority",
+    "authorityLine": "{{authority}}: {{forwarded}} cases sent, median first reply {{median}}",
+    "reasons": "Closed, unresolved: reasons",
+    "withdrawals": "Withdrawn reports: reasons given",
+    "withdrawnTotal": "Reports withdrawn in total: {{count}}",
+    "none": "None yet."
+  },
+  "pages": {
+    "howItWorks": {
+      "title": "How it works",
+      "intro": "This is what happens after you report, in plain steps.",
+      "sections": [
+        {
+          "h": "1. You send a report",
+          "p": [
+            "You tell us what happened using a short form and can add screenshots. You get a tracking code. Keep it safe. It is the only way to add evidence or withdraw later, and we cannot show it to you again."
+          ]
+        },
+        {
+          "h": "2. We call you back",
+          "p": [
+            "A member of our team calls the number you gave to confirm the report is yours. We do not publish your number."
+          ]
+        },
+        {
+          "h": "3. We check it and send it on",
+          "p": [
+            "We review each report in the order received. If it is in scope, we send a case file to the right authority."
+          ]
+        },
+        {
+          "h": "4. We record every reply",
+          "p": [
+            "Each time an authority replies, we log the date and the type of reply. We do not copy what the authority wrote."
+          ]
+        },
+        {
+          "h": "5. The ledger shows progress",
+          "p": [
+            "Only a short neutral summary written by our team appears in the public ledger, with the authority, the status and the dates. It never contains names, images, links, phone numbers or anything you wrote."
+          ]
+        },
+        {
+          "h": "What we cover",
+          "ul": [
+            "Sharing or leaking intimate images or video without consent",
+            "Sextortion and blackmail involving intimate content",
+            "Online sexual harassment",
+            "Online sexual exploitation or trafficking (adult victims on this website)"
+          ]
+        },
+        {
+          "h": "What we do not cover",
+          "p": [
+            "Hate speech, defamation disputes, political or expression cases, fraud, and any dispute where the harm is not sexual or non-consensual."
+          ]
+        },
+        {
+          "h": "People under 18",
+          "p": [
+            "We do not take reports about people under 18. The referral page explains how to complain directly to the right bodies."
+          ],
+          "link": { "to": "/referral", "label": "Go to the referral page" }
+        },
+        {
+          "h": "If you change your mind",
+          "p": ["You can withdraw a report at any time with your tracking code."],
+          "link": { "to": "/withdraw", "label": "Withdraw my report" }
+        }
+      ]
+    },
+    "methodology": {
+      "title": "Methodology",
+      "intro": "What we publish, what we never publish, and how every figure is counted.",
+      "sections": [
+        {
+          "h": "What the ledger shows",
+          "ul": [
+            "Case ID and dates",
+            "A broad category",
+            "A short summary written by our team",
+            "The authority the case was sent to",
+            "The type and date of the latest reply",
+            "The status, and the closing reason when a case is closed",
+            "Whether a resubmission was requested",
+            "When the row was last updated"
+          ]
+        },
+        {
+          "h": "What we never publish",
+          "ul": [
+            "Names of anyone",
+            "Images, video, audio or screenshots",
+            "Phone numbers",
+            "Profile links or usernames",
+            "Anything the reporter wrote",
+            "Names of officers. Only the authority is shown"
+          ]
+        },
+        {
+          "h": "How the top figures are counted",
+          "ul": [
+            "Cases sent to authorities: every case we have forwarded to an authority.",
+            "Awaiting a reply: forwarded cases that are not closed and have no reply from the authority yet. A logged \"no reply\" does not count as a reply.",
+            "Under investigation: cases where the authority has told us action is under way.",
+            "Closed, resolved: cases with a closing event whose outcome is recorded as resolved from the authority's correspondence.",
+            "Closed, unresolved: cases closed without a resolved outcome. Each has a reason.",
+            "Median time to first reply: the middle value of the days between sending a case and the authority's first acknowledgement."
+          ],
+          "p": [
+            "Every figure comes from logged, dated events. [VERIFY: owner to confirm these definitions before launch]"
+          ]
+        },
+        {
+          "h": "How a case moves",
+          "p": [
+            "A case shows one status at a time: submitted, acknowledged, under investigation, additional information requested, resubmission requested, no response (after a set number of days), closed and resolved, or closed and unresolved."
+          ]
+        },
+        { "h": "Dates and time", "p": ["Dates and times are shown in Sri Lanka time."] }
+      ]
+    },
+    "about": {
+      "title": "About and independence",
+      "intro": "Who runs this project and what it is not.",
+      "sections": [
+        {
+          "h": "Independence",
+          "p": [
+            "SLCCRAOP is an independent civil-society project. It is not part of, endorsed by, or acting for any government body or police force.",
+            "The word “Registry” in our name does not mean we are an official registry."
+          ]
+        },
+        { "h": "Who runs it", "p": ["{{ownerPublicName}}"] },
+        {
+          "h": "What we do",
+          "p": [
+            "We help people report online sexual abuse and non-consensual sexual content, pass verified cases to the right Sri Lankan authority, and show publicly, without naming anyone, how each authority responds over time."
+          ]
+        },
+        {
+          "h": "What we are not",
+          "p": [
+            "We are not an emergency service, a court or a law firm. We do not investigate cases and we do not give legal advice."
+          ]
+        },
+        { "h": "Operating entity", "p": ["{{operatingEntity}}"] }
+      ]
+    },
+    "privacy": {
+      "title": "Privacy notice",
+      "intro": "[LEGAL REVIEW REQUIRED: this notice is a structure only. A lawyer must write and approve the text.]",
+      "sections": [
+        { "h": "What we collect", "p": ["[LEGAL REVIEW REQUIRED: list of data collected]"] },
+        {
+          "h": "Who can see it",
+          "p": ["[LEGAL REVIEW REQUIRED: who can see submitted data, and when authorities receive it]"]
+        },
+        {
+          "h": "How long we keep it",
+          "p": [
+            "Draft defaults, not yet approved: withdrawn reports are removed within 30 days, and closed cases are kept for 24 months unless an authority asks us to keep them longer. [LEGAL REVIEW REQUIRED: retention periods]"
+          ]
+        },
+        {
+          "h": "Where data is stored",
+          "p": ["[LEGAL REVIEW REQUIRED: data residency and cross-border transfer]"]
+        },
+        {
+          "h": "Your rights",
+          "p": ["[LEGAL REVIEW REQUIRED: rights of access, correction and removal, and how to use them]"]
+        },
+        {
+          "h": "This website",
+          "p": [
+            "This website does not use advertising trackers, third-party analytics or external font services. [VERIFY: confirm before launch, including if analytics are added later]"
+          ]
+        }
+      ]
+    },
+    "terms": {
+      "title": "Terms of use",
+      "intro": "[LEGAL REVIEW REQUIRED: this page is a structure only. A lawyer must write and approve the text.]",
+      "sections": [
+        { "h": "Using this website", "p": ["[LEGAL REVIEW REQUIRED: acceptable use]"] },
+        {
+          "h": "Accuracy of reports",
+          "p": ["[LEGAL REVIEW REQUIRED: responsibility for what reporters submit]"]
+        },
+        {
+          "h": "Limits of our service",
+          "p": [
+            "We are not an emergency service. If someone is in immediate danger, contact the police first. [LEGAL REVIEW REQUIRED: full limitation wording]"
+          ]
+        },
+        { "h": "Changes to these terms", "p": ["[LEGAL REVIEW REQUIRED: how changes are made and shown]"] }
+      ]
+    },
+    "consent": {
+      "title": "Consent and withdrawal",
+      "intro": "Plain-language summary. The full wording is below once it has been reviewed.",
+      "sections": [
+        {
+          "h": "What consent means here",
+          "ul": [
+            "Your cooperation is voluntary.",
+            "You can withdraw your report at any time.",
+            "Our team and the authority that receives your case can see what you send. Nobody else can.",
+            "We never publish names, images, phone numbers, links or anything you write."
+          ]
+        },
+        {
+          "h": "How to withdraw",
+          "p": ["Use your tracking code. You do not have to give a reason."],
+          "link": { "to": "/withdraw", "label": "Withdraw my report" }
+        },
+        {
+          "h": "Full wording",
+          "p": ["[LEGAL REVIEW REQUIRED: full consent and withdrawal wording, in English, Sinhala and Tamil]"]
+        }
+      ]
+    },
+    "contact": {
+      "title": "Contact",
+      "intro": "How to reach us.",
+      "sections": [
+        {
+          "h": "Email",
+          "p": [
+            "{{contactEmail}}",
+            "Please do not send images or personal details by email. Use the report form instead."
+          ]
+        },
+        {
+          "h": "Corrections and removals",
+          "p": ["If something published about a case is wrong, use the correction form."],
+          "link": { "to": "/correction", "label": "Request a correction or removal" }
+        },
+        {
+          "h": "Press and authorities",
+          "p": ["[VERIFY: contact route for press and for authority liaisons]"]
+        }
+      ]
+    }
+  }
+}
