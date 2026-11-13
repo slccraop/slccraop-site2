@@ -9,8 +9,8 @@ export function HomePage() {
   usePageTitle(t('ledger.title'));
   return (
     <>
-      <h1>{t('home.title')}</h1>
-      <p className="lede">{t('home.lede')}</p>
+      <h1 className="home-title">{t('home.title')}</h1>
+      <p className="lede home-lede">{t('home.lede')}</p>
       <div className="cta">
         <Link className="btn primary" to="/report">
           {t('home.report')}
