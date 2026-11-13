@@ -7,7 +7,7 @@ export default defineConfig(({ mode }) => {
   const sample = mode === 'sample';
   return {
     plugins: [react()],
-    base: sample ? './' : '/',
+    base: sample ? './' : '/slccraop-site2/',
     build: {
       target: 'es2020',
       sourcemap: false,
