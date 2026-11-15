@@ -1,3 +1,4 @@
+import { lazy, Suspense } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { ContentPage } from '../features/pages/ContentPage';
 import { MethodologyPage } from '../features/pages/MethodologyPage';
@@ -11,9 +12,19 @@ import { ReportPage } from '../features/report/ReportPage';
 import { WithdrawPage } from '../features/report/WithdrawPage';
 import { Layout } from './Layout';
 
+const AdminApp = lazy(() => import('../features/admin/AdminApp').then((m) => ({ default: m.AdminApp })));
+
 export function App() {
   return (
     <Routes>
+      <Route
+        path="admin/*"
+        element={
+          <Suspense fallback={null}>
+            <AdminApp />
+          </Suspense>
+        }
+      />
       <Route element={<Layout />}>
         <Route index element={<HomePage />} />
         <Route path="how-it-works" element={<ContentPage k="howItWorks" />} />

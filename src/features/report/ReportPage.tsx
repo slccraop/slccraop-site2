@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { Marked } from '../../components/Marked';
+import { ReportForm } from './ReportForm';
 import { NotTranslated } from '../../components/NotTranslated';
 import { fetchIntake } from '../../lib/api';
 import { useAsync } from '../../lib/useAsync';
@@ -9,11 +10,6 @@ import { usePageTitle } from '../../lib/usePageTitle';
 
 type Screen = 'language' | 'eligibility' | 'danger' | 'consent' | 'form' | 'minor';
 
-/**
- * Stage 1 covers the gate screens of manual 6.2: language, eligibility, danger notice, consent.
- * Answers live in React state only. Nothing is written to storage or sent anywhere (manual 5.11).
- * The questionnaire, screenshot upload, phone step and bot check are Stage 3 and are shown as an explicit [STAGE 3] marker.
- */
 export function ReportPage() {
   const { t } = useTranslation();
   usePageTitle(t('report.title'));
@@ -24,17 +20,18 @@ export function ReportPage() {
   const [behalfOk, setBehalfOk] = useState(false);
   const [dangerOk, setDangerOk] = useState(false);
   const [consentOk, setConsentOk] = useState(false);
+  const [finished, setFinished] = useState(false);
   const heading = useRef<HTMLHeadingElement>(null);
 
   useEffect(() => {
     if (screen !== 'language') heading.current?.focus();
   }, [screen]);
   useEffect(() => {
-    if (screen === 'language') return;
+    if (screen === 'language' || finished) return;
     const warn = (e: BeforeUnloadEvent) => e.preventDefault();
     window.addEventListener('beforeunload', warn);
     return () => window.removeEventListener('beforeunload', warn);
-  }, [screen]);
+  }, [screen, finished]);
 
   const mode =
     intake.state === 'ready' ? (intake.data ?? 'unknown') : intake.state === 'error' ? 'unknown' : null;
@@ -83,13 +80,11 @@ export function ReportPage() {
           <strong>{t('intake.limited.title')}</strong> {t('intake.limited.body')}
         </div>
       )}
-      {screen !== 'language' && <p className="hint">{t('report.leaveWarning')}</p>}
+      {screen !== 'language' && !finished && <p className="hint">{t('report.leaveWarning')}</p>}
 
       {screen === 'language' && (
         <div className="prose">
-          <h2 ref={heading} tabIndex={-1}>
-            {t('report.language.heading')}
-          </h2>
+          <h2 ref={heading} tabIndex={-1}>{t('report.language.heading')}</h2>
           <p>{t('report.language.body')}</p>
           <button type="button" className="btn primary" onClick={() => setScreen('eligibility')}>
             {t('report.continue')}
@@ -99,9 +94,7 @@ export function ReportPage() {
 
       {screen === 'eligibility' && (
         <div className="form">
-          <h2 ref={heading} tabIndex={-1}>
-            {t('report.eligibility.heading')}
-          </h2>
+          <h2 ref={heading} tabIndex={-1}>{t('report.eligibility.heading')}</h2>
           <fieldset>
             <legend>{t('report.eligibility.minorQ')}</legend>
             <label className="check">
@@ -120,12 +113,7 @@ export function ReportPage() {
               {t('report.eligibility.self')}
             </label>
             <label className="check">
-              <input
-                type="radio"
-                name="role"
-                checked={role === 'behalf'}
-                onChange={() => setRole('behalf')}
-              />
+              <input type="radio" name="role" checked={role === 'behalf'} onChange={() => setRole('behalf')} />
               {t('report.eligibility.behalf')}
             </label>
           </fieldset>
@@ -145,33 +133,22 @@ export function ReportPage() {
 
       {screen === 'minor' && (
         <div className="prose">
-          <h2 ref={heading} tabIndex={-1}>
-            {t('report.minor.heading')}
-          </h2>
+          <h2 ref={heading} tabIndex={-1}>{t('report.minor.heading')}</h2>
           <p>{t('report.minor.body')}</p>
-          <Link className="btn primary" to="/referral">
-            {t('report.referralLink')}
-          </Link>
+          <Link className="btn primary" to="/referral">{t('report.referralLink')}</Link>
         </div>
       )}
 
       {screen === 'danger' && (
         <div className="form">
-          <h2 ref={heading} tabIndex={-1}>
-            {t('report.danger.heading')}
-          </h2>
+          <h2 ref={heading} tabIndex={-1}>{t('report.danger.heading')}</h2>
           <p>{t('report.danger.body')}</p>
           <label className="check">
             <input type="checkbox" checked={dangerOk} onChange={(e) => setDangerOk(e.target.checked)} />
             {t('report.danger.ack')}
           </label>
           <div className="actions">
-            <button
-              type="button"
-              className="btn primary"
-              disabled={!dangerOk}
-              onClick={() => setScreen('consent')}
-            >
+            <button type="button" className="btn primary" disabled={!dangerOk} onClick={() => setScreen('consent')}>
               {t('report.continue')}
             </button>
           </div>
@@ -180,9 +157,7 @@ export function ReportPage() {
 
       {screen === 'consent' && (
         <div className="form">
-          <h2 ref={heading} tabIndex={-1}>
-            {t('report.consent.heading')}
-          </h2>
+          <h2 ref={heading} tabIndex={-1}>{t('report.consent.heading')}</h2>
           <ul>
             <li>{t('report.consent.voluntary')}</li>
             <li>{t('report.consent.withdraw')}</li>
@@ -197,12 +172,7 @@ export function ReportPage() {
             {t('report.consent.agree')}
           </label>
           <div className="actions">
-            <button
-              type="button"
-              className="btn primary"
-              disabled={!consentOk}
-              onClick={() => setScreen('form')}
-            >
+            <button type="button" className="btn primary" disabled={!consentOk} onClick={() => setScreen('form')}>
               {t('report.continue')}
             </button>
           </div>
@@ -210,14 +180,11 @@ export function ReportPage() {
       )}
 
       {screen === 'form' && (
-        <div className="prose">
-          <h2 ref={heading} tabIndex={-1}>
-            {t('report.form.heading')}
-          </h2>
-          <p>
-            <Marked text={t('report.form.pending')} />
-          </p>
-        </div>
+        <ReportForm
+          role={role === 'behalf' ? 'behalf' : 'self'}
+          behalfConsent={behalfOk}
+          onDone={() => setFinished(true)}
+        />
       )}
     </>
   );
