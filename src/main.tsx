@@ -15,15 +15,21 @@ import './styles/extras.css';
 import './lib/i18n';
 import { App } from './app/App';
 
-// The sample preview is opened straight from a file, where only hash routes work. Real builds use normal URLs.
-const Router = import.meta.env.MODE === 'sample' ? HashRouter : BrowserRouter;
-
+// The sample preview is opened straight from a file, where only hash routes work.
+// GitHub Pages hosts this project under /slccraop-site2/, so the production router
+// must use Vite's base path as its basename for the index route and links to work.
 const root = document.getElementById('root');
 if (!root) throw new Error('Missing #root element in index.html');
 createRoot(root).render(
   <StrictMode>
-    <Router>
-      <App />
-    </Router>
+    {import.meta.env.MODE === 'sample' ? (
+      <HashRouter>
+        <App />
+      </HashRouter>
+    ) : (
+      <BrowserRouter basename={import.meta.env.BASE_URL}>
+        <App />
+      </BrowserRouter>
+    )}
   </StrictMode>,
 );
