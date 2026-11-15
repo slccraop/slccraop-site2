@@ -1,0 +1,38 @@
+import js from '@eslint/js';
+import tseslint from 'typescript-eslint';
+import reactHooks from 'eslint-plugin-react-hooks';
+
+export default tseslint.config(
+  { ignores: ['dist', 'node_modules', 'scripts'] },
+  js.configs.recommended,
+  ...tseslint.configs.recommended,
+  {
+    files: ['**/*.{ts,tsx}'],
+    plugins: { 'react-hooks': reactHooks },
+    rules: {
+      ...reactHooks.configs.recommended.rules,
+      'no-console': 'error',
+      'no-restricted-syntax': [
+        'error',
+        {
+          selector: "JSXAttribute[name.name='dangerouslySetInnerHTML']",
+          message: 'Never render raw HTML (manual 5.10).',
+        },
+        {
+          selector: "JSXAttribute[name.name='style']",
+          message:
+            'Inline style attributes break the CSP (style-src self). Use a CSS class in src/styles/extras.css.',
+        },
+      ],
+    },
+  },
+  {
+    // Server code may log error CLASSES to the function logs (never data). Tests and check scripts may print and use loose types.
+    files: ['supabase/functions/**/*.ts'],
+    rules: { 'no-console': ['error', { allow: ['error'] }] },
+  },
+  {
+    files: ['supabase/tests/**/*.ts'],
+    rules: { 'no-console': 'off', '@typescript-eslint/no-explicit-any': 'off' },
+  },
+);
