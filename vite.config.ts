@@ -1,13 +1,18 @@
 import { defineConfig } from 'vitest/config';
 import react from '@vitejs/plugin-react';
 
-// assetsInlineLimit 0: nothing is inlined as a data: URI, so the CSP never needs `data:` for fonts or images.
-// mode "sample" (npm run build:sample) builds a double-click preview into /preview with FAKE data. It is never deployed.
+const isSample = (mode: string) => mode === 'sample';
+const isWorkersDeploy = () => (process.env.DEPLOY_TARGET ?? '').toLowerCase() === 'workers';
+
+// GitHub Pages hosts this project under /slccraop-site2/, while Cloudflare Workers deploys at the site root.
+// Use DEPLOY_TARGET=workers for the Worker build and DEPLOY_TARGET=pages (default in Pages workflow) for GitHub Pages.
 export default defineConfig(({ mode }) => {
-  const sample = mode === 'sample';
+  const sample = isSample(mode);
+  const base = isWorkersDeploy() ? '/' : sample ? './' : '/slccraop-site2/';
+
   return {
     plugins: [react()],
-    base: sample ? './' : '/slccraop-site2/',
+    base,
     build: {
       target: 'es2020',
       sourcemap: false,
